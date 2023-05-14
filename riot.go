@@ -22,8 +22,8 @@ import (
 
 	"encoding/gob"
 
-	"github.com/go-ego/murmur"
 	toml "github.com/go-vgo/gt/conf"
+	"github.com/vcaesar/murmur"
 	"github.com/xiechuxi/riot/core"
 	"github.com/xiechuxi/riot/types"
 )

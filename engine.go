@@ -37,8 +37,8 @@ import (
 	"github.com/xiechuxi/riot/utils"
 
 	"github.com/go-ego/gse"
-	"github.com/go-ego/murmur"
 	"github.com/shirou/gopsutil/mem"
+	"github.com/vcaesar/murmur"
 )
 
 const (
