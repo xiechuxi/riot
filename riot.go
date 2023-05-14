@@ -23,9 +23,9 @@ import (
 	"encoding/gob"
 
 	"github.com/go-ego/murmur"
-	"github.com/go-ego/riot/core"
-	"github.com/go-ego/riot/types"
 	toml "github.com/go-vgo/gt/conf"
+	"github.com/xiechuxi/riot/core"
+	"github.com/xiechuxi/riot/types"
 )
 
 // New create a new engine with mode

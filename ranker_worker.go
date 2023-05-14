@@ -16,7 +16,7 @@
 package riot
 
 import (
-	"github.com/go-ego/riot/types"
+	"github.com/xiechuxi/riot/types"
 )
 
 type rankerAddDocReq struct {

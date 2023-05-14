@@ -1,0 +1,506 @@
+# Query: github.com/go-ego/riot
+# ContextLines: 1
+
+160 results - 61 files
+
+.travis.yml:
+  2  
+  3: go_import_path: github.com/xiechuxi/riot
+  4  
+
+appveyor.yml:
+  39    - ps: Add-AppveyorTest "Unit Tests" -Outcome Running
+  40:   # - go test -u github.com/xiechuxi/riot/...
+  41:   - go test -v github.com/xiechuxi/riot/...
+  42    - ps: Update-AppveyorTest "Unit Tests" -Outcome Passed
+
+circle.yml:
+  11        - image: golang:1.14.4
+  12:     working_directory: /gopath/src/github.com/xiechuxi/riot
+  13      steps:
+
+CONTRIBUTING.md:
+   4  
+   5: This document explains how to contribute changes to the Ego project. It assumes you have followed the README.md and [API Document](https://github.com/xiechuxi/riot/tree/master/docs). <!--Sensitive security-related issues should be reported to [security@Ego.io](mailto:security@Ego.io.)-->
+   6  
+
+  10  
+  11: If unique, [open an issue](https://github.com/xiechuxi/riot/issues/new) and answer the questions so we can understand and reproduce the problematic behavior.
+  12  
+
+  20  
+  21: Before starting to write something new for the Ego project, please [file an issue](https://github.com/xiechuxi/riot/issues/new). Significant changes must go through the [change proposal process](https://github.com/go-ego/proposals) before they can be accepted.
+  22  
+
+engine_test.go:
+  13  	"github.com/go-ego/gse"
+  14: 	"github.com/xiechuxi/riot/types"
+  15  	"github.com/vcaesar/tt"
+
+engine.go:
+  34  
+  35: 	"github.com/xiechuxi/riot/core"
+  36: 	"github.com/xiechuxi/riot/store"
+  37: 	"github.com/xiechuxi/riot/types"
+  38: 	"github.com/xiechuxi/riot/utils"
+  39  
+
+indexer_worker.go:
+  20  
+  21: 	"github.com/xiechuxi/riot/types"
+  22  )
+
+ranker_worker.go:
+  18  import (
+  19: 	"github.com/xiechuxi/riot/types"
+  20  )
+
+README_zh.md:
+    1: # [Riot 搜索引擎](https://github.com/xiechuxi/riot)
+    2  
+
+    8  [![Build Status](https://travis-ci.org/go-ego/riot.svg)](https://travis-ci.org/go-ego/riot)
+    9: [![Go Report Card](https://goreportcard.com/badge/github.com/xiechuxi/riot)](https://goreportcard.com/report/github.com/xiechuxi/riot)
+   10: [![GoDoc](https://godoc.org/github.com/xiechuxi/riot?status.svg)](https://godoc.org/github.com/xiechuxi/riot)
+   11: [![GitHub release](https://img.shields.io/github/release/go-ego/riot.svg)](https://github.com/xiechuxi/riot/releases/latest)
+   12  [![Join the chat at https://gitter.im/go-ego/ego](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-ego/ego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+   21  * 支持中文分词（使用 [gse 分词包](https://github.com/go-ego/gse)并发分词，速度 27MB/秒）
+   22: * 支持[逻辑搜索](https://github.com/xiechuxi/riot/blob/master/docs/zh/logic.md)
+   23  * 支持中文转拼音搜索(使用 [gpy](https://github.com/go-ego/gpy) 中文转拼音)
+
+   29  * 支持 heartbeat
+   30: * 支持[分布式索引和搜索](https://github.com/xiechuxi/riot/tree/master/data)
+   31  * 可实现[分布式索引和搜索](/docs/zh/distributed_indexing_and_search.md)
+
+   33  
+   34: * [查看分词规则](https://github.com/xiechuxi/riot/blob/master/docs/zh/segmenter.md)
+   35  <!-- 
+   36: Riot v0.10.0 was released in Nov 2017, check the [Changelog](https://github.com/xiechuxi/riot/blob/master/docs/CHANGELOG.md) for the full details. -->
+   37  
+
+   41  ```
+   42: go get -u github.com/xiechuxi/riot
+   43  ```
+
+   79  
+   80: 	"github.com/xiechuxi/riot"
+   81: 	"github.com/xiechuxi/riot/types"
+   82  )
+
+   93  		GseDict: "zh",
+   94: 		// GseDict: "your gopath"+"/src/github.com/xiechuxi/riot/data/dict/dictionary.txt",
+   95  	})
+
+  127  
+  128: 	"github.com/xiechuxi/riot"
+  129: 	"github.com/xiechuxi/riot/types"
+  130  )
+
+  152  
+  153: #### [查看更多例子](https://github.com/xiechuxi/riot/tree/master/examples)
+  154  
+  155: #### [持久化的例子](https://github.com/xiechuxi/riot/blob/master/examples/store/main.go)
+  156: #### [逻辑搜索的例子](https://github.com/xiechuxi/riot/blob/master/examples/logic/main.go)
+  157  
+  158: #### [拼音搜索的例子](https://github.com/xiechuxi/riot/blob/master/examples/pinyin/main.go)
+  159  
+  160: #### [不同字典和语言例子](https://github.com/xiechuxi/riot/blob/master/examples/dict/main.go)
+  161  
+  162: #### [benchmark](https://github.com/xiechuxi/riot/blob/master/examples/benchmark/benchmark.go)
+  163  
+  164: #### [Riot 搜索模板, 客户端和字典](https://github.com/xiechuxi/riot/tree/master/data)
+  165  
+
+  179  * [Maintainers](https://github.com/orgs/go-ego/people)
+  180: * [Contributors](https://github.com/xiechuxi/riot/graphs/contributors)
+  181  
+
+README.md:
+   10  [![Build Status](https://travis-ci.org/go-ego/riot.svg)](https://travis-ci.org/go-ego/riot)
+   11: [![Go Report Card](https://goreportcard.com/badge/github.com/xiechuxi/riot)](https://goreportcard.com/report/github.com/xiechuxi/riot)
+   12: [![GoDoc](https://godoc.org/github.com/xiechuxi/riot?status.svg)](https://godoc.org/github.com/xiechuxi/riot)
+   13: [![GitHub release](https://img.shields.io/github/release/go-ego/riot.svg)](https://github.com/xiechuxi/riot/releases/latest)
+   14  [![Join the chat at https://gitter.im/go-ego/ego](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-ego/ego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+   15: <!-- [![Release](https://github-release-version.herokuapp.com/github/go-ego/riot/release.svg?style=flat)](https://github.com/xiechuxi/riot/releases/latest) -->
+   16  <!--<a href="https://github.com/go-ego/ego/releases"><img src="https://img.shields.io/badge/%20version%20-%206.0.0%20-blue.svg?style=flat-square" alt="Releases"></a>-->
+
+   20  
+   21: [简体中文](https://github.com/xiechuxi/riot/blob/master/README_zh.md)
+   22  
+
+   25  * [Efficient indexing and search](/docs/en/benchmarking.md) (1M blog 500M data 28 seconds index finished, 1.65 ms search response time, 19K search QPS）
+   26: * Support for [logical search](https://github.com/xiechuxi/riot/blob/master/docs/en/logic.md)
+   27  * Support Chinese word segmentation (use [gse word segmentation package](https://github.com/go-ego/gse) concurrent word, speed 27MB / s）
+
+   33  * Support multiple [persistent storage](/docs/en/persistent_storage.md)
+   34: * Support [distributed index and search](https://github.com/xiechuxi/riot/tree/master/data)
+   35  * Can be achieved [distributed index and search](/docs/en/distributed_indexing_and_search.md)
+   36  
+   37: * [Look at Word segmentation rules](https://github.com/xiechuxi/riot/blob/master/docs/en/segmenter.md)
+   38  
+   39  <!-- 
+   40: Riot v0.20.0 was released in Nov 2017, check the [Changelog](https://github.com/xiechuxi/riot/blob/master/docs/CHANGELOG.md) for the full details. -->
+   41  
+
+   51  ```
+   52: go get -u github.com/xiechuxi/riot
+   53  ```
+
+   82  
+   83: 	"github.com/xiechuxi/riot"
+   84: 	"github.com/xiechuxi/riot/types"
+   85  )
+
+  129  
+  130: 	"github.com/xiechuxi/riot"
+  131: 	"github.com/xiechuxi/riot/types"
+  132  )
+
+  154  
+  155: #### [Look at more Examples](https://github.com/xiechuxi/riot/tree/master/examples)
+  156  
+  157: #### [Look at Store example](https://github.com/xiechuxi/riot/blob/master/examples/store/main.go)
+  158: #### [Look at Logic search example](https://github.com/xiechuxi/riot/blob/master/examples/logic/main.go)
+  159  
+  160: #### [Look at Pinyin search example](https://github.com/xiechuxi/riot/blob/master/examples/pinyin/main.go)
+  161  
+  162: #### [Look at different dict and language search example](https://github.com/xiechuxi/riot/blob/master/examples/dict/main.go)
+  163  
+  164: #### [Look at benchmark example](https://github.com/xiechuxi/riot/blob/master/examples/benchmark/benchmark.go)
+  165  
+  166: #### [Riot search engine templates, client and dictionaries](https://github.com/xiechuxi/riot/tree/master/data)
+  167  
+
+  170  * [Maintainers](https://github.com/orgs/go-ego/people)
+  171: * [Contributors](https://github.com/xiechuxi/riot/graphs/contributors)
+  172  
+
+riot_test.go:
+   9  
+  10: 	"github.com/xiechuxi/riot/types"
+  11  	"github.com/vcaesar/tt"
+
+riot.go:
+  25  	"github.com/go-ego/murmur"
+  26: 	"github.com/xiechuxi/riot/core"
+  27: 	"github.com/xiechuxi/riot/types"
+  28  	toml "github.com/go-vgo/gt/conf"
+
+segment.go:
+  24  	"github.com/go-ego/gpy/phrase"
+  25: 	"github.com/xiechuxi/riot/types"
+  26  )
+
+store_worker.go:
+  23  
+  24: 	"github.com/xiechuxi/riot/types"
+  25  )
+
+test_utils.go:
+  5  
+  6: 	"github.com/xiechuxi/riot/types"
+  7  )
+
+.github/issue_template.md:
+  11  - Operating system and bit:
+  12: - Can you reproduce the bug at [Examples](https://github.com/xiechuxi/riot/tree/master/examples):
+  13    - [ ] Yes (provide example code)
+
+.github/pull_request_template.md:
+  3  1. Make sure you are targeting the `master` branch, pull requests on release branches are only allowed for bug fixes.
+  4: 2. Please read contributing guidelines: [CONTRIBUTING](https://github.com/xiechuxi/riot/blob/master/CONTRIBUTING.md)
+  5  3. Describe what your pull request does and which issue you're targeting (if any and Please use English)
+
+core/data.go:
+  19  
+  20: 	"github.com/xiechuxi/riot/types"
+  21  )
+
+core/indexer_test.go:
+  5  
+  6: 	"github.com/xiechuxi/riot/types"
+  7  	"github.com/vcaesar/tt"
+
+core/indexer.go:
+  27  
+  28: 	"github.com/xiechuxi/riot/types"
+  29: 	"github.com/xiechuxi/riot/utils"
+  30  )
+
+core/ranker_test.go:
+  6  
+  7: 	"github.com/xiechuxi/riot/types"
+  8  	"github.com/vcaesar/tt"
+
+core/ranker.go:
+  22  
+  23: 	"github.com/xiechuxi/riot/types"
+  24: 	"github.com/xiechuxi/riot/utils"
+  25  )
+
+core/test_utils.go:
+  5  
+  6: 	"github.com/xiechuxi/riot/types"
+  7  )
+
+data/main.go:
+  19  
+  20: 	"github.com/xiechuxi/riot"
+  21: 	"github.com/xiechuxi/riot/types"
+  22  )
+
+data/client/main.go:
+  22  
+  23: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  24  	grpclb "github.com/go-vgo/grpclb"
+
+data/riot/main.go:
+  21  
+  22: 	"github.com/xiechuxi/riot/net/com"
+  23: 	rpc "github.com/xiechuxi/riot/net/grpc"
+  24: 	rhttp "github.com/xiechuxi/riot/net/http"
+  25  
+  26: 	"github.com/xiechuxi/riot"
+  27  	"github.com/go-vgo/gt/conf"
+
+data/riot/heartb/main.go:
+  20  
+  21: 	hb "github.com/xiechuxi/riot/net/heartb"
+  22  )
+
+data/riot1/main.go:
+  20  
+  21: 	"github.com/xiechuxi/riot/net/com"
+  22: 	rpc "github.com/xiechuxi/riot/net/grpc"
+  23: 	rhttp "github.com/xiechuxi/riot/net/http"
+  24  
+  25: 	"github.com/xiechuxi/riot"
+  26  	"github.com/go-vgo/gt/conf"
+
+data/riot1/heartb/main.go:
+  20  
+  21: 	hb "github.com/xiechuxi/riot/net/heartb"
+  22  )
+
+docs/CHANGELOG.md:
+  48  
+  49:     [Look at docs](https://github.com/xiechuxi/riot/tree/master/docs)
+  50  
+
+  60      
+  61:     [Look at more Examples](https://github.com/xiechuxi/riot/tree/master/examples)
+  62  
+
+docs/en/benchmarking.md:
+  30  Enter the pprof terminal after entering the web command can generate a similar figure below, clearly shows the CPU time consumed by each component:
+  31: ![](https://raw.github.com/xiechuxi/riot/master/docs/zh/cpu.png)
+  32  
+
+docs/en/codelab.md:
+  16      
+  17: ![](https://raw.github.com/xiechuxi/riot/master/docs/zh/gwk.png)
+  18  
+
+  34  
+  35: I've already got about 100,000 tweets in testdata/weibo_data.txt (deleted because of the download speed of git clone, please click [here] (https://github.com/xiechuxi/riot/blob/43f20b4c0921cc704cf41fe8653e66a3fcbb7e31/testdata/weibo_data.txt?raw=true), so you do not need to do it yourself. Each line in the document stores a microblogging, the format is as follows
+  36  
+
+  58  import (
+  59: 	"github.com/xiechuxi/riot"
+  60: 	"github.com/xiechuxi/riot/types"
+  61  )
+
+docs/en/docker.md:
+  5  
+  6: 1、Please download weibo_data.txt from [here](https://github.com/xiechuxi/riot/blob/43f20b4c0921cc704cf41fe8653e66a3fcbb7e31/testdata/weibo_data.txt?raw=true) and place it in the testdata/directory, Can be omitted.
+  7  
+
+docs/zh/benchmarking.md:
+  31  
+  32: ![](https://raw.github.com/xiechuxi/riot/master/docs/zh/cpu.png)
+  33  
+
+docs/zh/codelab.md:
+  16      
+  17: ![](https://raw.github.com/xiechuxi/riot/master/docs/zh/gwk.png)
+  18  
+
+  34  
+  35: 我已经抓了大概十万篇微博放在了 testdata/weibo_data.txt 里(因为影响git clone的下载速度所以删除了，请从[这里](https://github.com/xiechuxi/riot/blob/43f20b4c0921cc704cf41fe8653e66a3fcbb7e31/testdata/weibo_data.txt?raw=true)下载)，所以你就不需要自己做了。文件中每行存储了一篇微博，格式如下
+  36  
+
+  58  import (
+  59: 	"github.com/xiechuxi/riot"
+  60: 	"github.com/xiechuxi/riot/types"
+  61  )
+
+docs/zh/docker.md:
+  5  
+  6: 1、请从[这里](https://github.com/xiechuxi/riot/blob/43f20b4c0921cc704cf41fe8653e66a3fcbb7e31/testdata/weibo_data.txt?raw=true)下载 weibo_data.txt，放在 testdata/目录下; 可省略
+  7  
+
+examples/README.md:
+   4  
+   5: #### [Look at Store example](https://github.com/xiechuxi/riot/blob/master/examples/store/main.go)
+   6  
+   7: #### [Look at Logic search example](https://github.com/xiechuxi/riot/blob/master/examples/logic/main.go)
+   8  
+   9: #### [Look at Pinyin search example](https://github.com/xiechuxi/riot/blob/master/examples/pinyin/main.go)
+  10  
+  11: #### [Look at different dict and language search example](https://github.com/xiechuxi/riot/blob/master/examples/dict/main.go)
+  12  
+  13: #### [Look at benchmark example](https://github.com/xiechuxi/riot/blob/master/examples/benchmark/benchmark.go)
+  14  
+  15: #### [Riot search engine templates, client and dictionaries](https://github.com/xiechuxi/riot/tree/master/data)
+
+examples/benchmark/benchmark.go:
+  17  
+  18: 	"github.com/xiechuxi/riot"
+  19: 	"github.com/xiechuxi/riot/types"
+  20  )
+
+examples/codelab/search_server.go:
+  18  
+  19: 	"github.com/xiechuxi/riot"
+  20: 	"github.com/xiechuxi/riot/types"
+  21  )
+
+examples/dict/main.go:
+   5  
+   6: 	"github.com/xiechuxi/riot"
+   7: 	"github.com/xiechuxi/riot/types"
+   8  )
+
+  23  		GseDict: "zh",
+  24: 		// GseDict: "your gopath"+"/src/github.com/xiechuxi/riot/data/dict/dictionary.txt",
+  25  	})
+
+  46  		GseDict: "jp",
+  47: 		// GseDict: "your gopath"+"/src/github.com/xiechuxi/riot/data/dict/jp/dict.txt",
+  48  	})
+
+examples/dict2/main.go:
+  6  	"github.com/go-ego/gse"
+  7: 	"github.com/xiechuxi/riot"
+  8: 	"github.com/xiechuxi/riot/types"
+  9  )
+
+examples/info/main.go:
+  5  
+  6: 	"github.com/xiechuxi/riot"
+  7: 	"github.com/xiechuxi/riot/types"
+  8  )
+
+examples/logic/main.go:
+  19  
+  20: 	"github.com/xiechuxi/riot"
+  21: 	"github.com/xiechuxi/riot/types"
+  22  )
+
+examples/new/main.go:
+  6  
+  7: 	"github.com/xiechuxi/riot"
+  8: 	"github.com/xiechuxi/riot/types"
+  9  )
+
+examples/pinyin/main.go:
+  20  
+  21: 	"github.com/xiechuxi/riot"
+  22: 	"github.com/xiechuxi/riot/types"
+  23  )
+
+examples/pinyin/old/main.go:
+  20  
+  21: 	"github.com/xiechuxi/riot"
+  22: 	"github.com/xiechuxi/riot/types"
+  23  )
+
+examples/pinyin_weibo/main.go:
+  15  
+  16: 	"github.com/xiechuxi/riot"
+  17: 	"github.com/xiechuxi/riot/types"
+  18  )
+
+examples/simple/main.go:
+  19  
+  20: 	"github.com/xiechuxi/riot"
+  21: 	"github.com/xiechuxi/riot/types"
+  22  )
+
+examples/simple/zh/main.go:
+  11  
+  12: 	"github.com/xiechuxi/riot"
+  13: 	"github.com/xiechuxi/riot/types"
+  14  )
+
+examples/store/main.go:
+  20  
+  21: 	"github.com/xiechuxi/riot"
+  22: 	"github.com/xiechuxi/riot/types"
+  23  )
+
+examples/weibo/custom_scoring_criteria.go:
+  25  
+  26: 	"github.com/xiechuxi/riot"
+  27: 	"github.com/xiechuxi/riot/types"
+  28  )
+
+net/com/search.go:
+  20  
+  21: 	"github.com/xiechuxi/riot"
+  22: 	"github.com/xiechuxi/riot/types"
+  23  	// "github.com/go-vgo/gt/zlog"
+
+net/grpc/etcd.go:
+  29  
+  30: 	"github.com/xiechuxi/riot/net/com"
+  31: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  32: 	"github.com/xiechuxi/riot/types"
+  33  	grpclb "github.com/go-vgo/grpclb"
+
+net/grpc/grpc.go:
+  24  
+  25: 	"github.com/xiechuxi/riot/net/com"
+  26: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  27: 	"github.com/xiechuxi/riot/types"
+  28  	zlog "github.com/go-vgo/zlog/zlog"
+
+net/grpc/grpcc.go:
+  24  
+  25: 	"github.com/xiechuxi/riot/net/com"
+  26: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  27  	zlog "github.com/go-vgo/zlog/zlog"
+
+net/grpc/search.go:
+  22  
+  23: 	"github.com/xiechuxi/riot/net/com"
+  24: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  25: 	"github.com/xiechuxi/riot/types"
+  26  )
+
+net/heartb/heart.go:
+  29  
+  30: 	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
+  31  )
+
+net/http/dist.go:
+  27  
+  28: 	"github.com/xiechuxi/riot/net/com"
+  29  )
+
+net/http/http.go:
+  27  
+  28: 	"github.com/xiechuxi/riot/net/com"
+  29: 	"github.com/xiechuxi/riot/types"
+  30  )
+
+net/http/search.go:
+  17  import (
+  18: 	"github.com/xiechuxi/riot/types"
+  19  )
+
+types/search_response.go:
+  18  import (
+  19: 	"github.com/xiechuxi/riot/utils"
+  20  )

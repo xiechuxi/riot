@@ -18,7 +18,7 @@ package riot
 import (
 	"sync/atomic"
 
-	"github.com/go-ego/riot/types"
+	"github.com/xiechuxi/riot/types"
 )
 
 type indexerAddDocReq struct {

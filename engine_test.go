@@ -11,8 +11,8 @@ import (
 	"testing"
 
 	"github.com/go-ego/gse"
-	"github.com/go-ego/riot/types"
 	"github.com/vcaesar/tt"
+	"github.com/xiechuxi/riot/types"
 )
 
 func TestGetVer(t *testing.T) {

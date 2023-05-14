@@ -13,8 +13,8 @@ import (
 	"os/signal"
 	"strconv"
 
-	"github.com/go-ego/riot"
-	"github.com/go-ego/riot/types"
+	"github.com/xiechuxi/riot"
+	"github.com/xiechuxi/riot/types"
 )
 
 const (
@@ -131,9 +131,13 @@ func JsonRpcServer(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, string(response))
 }
 
-/*******************************************************************************
+/*
+******************************************************************************
+
 	主函数
-*******************************************************************************/
+
+******************************************************************************
+*/
 func main() {
 
 	// runtime.GOMAXPROCS(runtime.NumCPU())

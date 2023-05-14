@@ -22,9 +22,9 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"github.com/go-ego/riot/net/com"
-	pb "github.com/go-ego/riot/net/grpc/riot-pb"
 	zlog "github.com/go-vgo/zlog/zlog"
+	"github.com/xiechuxi/riot/net/com"
+	pb "github.com/xiechuxi/riot/net/grpc/riot-pb"
 )
 
 // Doc grpc response

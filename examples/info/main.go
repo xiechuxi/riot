@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/go-ego/riot"
-	"github.com/go-ego/riot/types"
+	"github.com/xiechuxi/riot"
+	"github.com/xiechuxi/riot/types"
 )
 
 var (

@@ -9,7 +9,7 @@ jobs:
   build:
     docker:
       - image: golang:1.14.4
-    working_directory: /gopath/src/github.com/go-ego/riot
+    working_directory: /gopath/src/github.com/xiechuxi/riot
     steps:
       - checkout
       # specify any bash command here prefixed with `run: `

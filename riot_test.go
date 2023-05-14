@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/go-ego/riot/types"
 	"github.com/vcaesar/tt"
+	"github.com/xiechuxi/riot/types"
 )
 
 func TestEngineIndexWithNewStore(t *testing.T) {

@@ -14,7 +14,6 @@
 // under the License.
 
 /*
-
 Package riot is riot engine
 */
 package riot
@@ -32,10 +31,10 @@ import (
 
 	"sync/atomic"
 
-	"github.com/go-ego/riot/core"
-	"github.com/go-ego/riot/store"
-	"github.com/go-ego/riot/types"
-	"github.com/go-ego/riot/utils"
+	"github.com/xiechuxi/riot/core"
+	"github.com/xiechuxi/riot/store"
+	"github.com/xiechuxi/riot/types"
+	"github.com/xiechuxi/riot/utils"
 
 	"github.com/go-ego/gse"
 	"github.com/go-ego/murmur"
@@ -359,14 +358,15 @@ func (engine *Engine) Init(options types.EngineOpts) {
 // 将文档加入索引
 //
 // 输入参数：
-//  docId	      标识文档编号，必须唯一，docId == 0 表示非法文档（用于强制刷新索引），[1, +oo) 表示合法文档
-//  data	      见 DocIndexData 注释
-//  forceUpdate 是否强制刷新 cache，如果设为 true，则尽快添加到索引，否则等待 cache 满之后一次全量添加
+//
+//	docId	      标识文档编号，必须唯一，docId == 0 表示非法文档（用于强制刷新索引），[1, +oo) 表示合法文档
+//	data	      见 DocIndexData 注释
+//	forceUpdate 是否强制刷新 cache，如果设为 true，则尽快添加到索引，否则等待 cache 满之后一次全量添加
 //
 // 注意：
-//      1. 这个函数是线程安全的，请尽可能并发调用以提高索引速度
-//      2. 这个函数调用是非同步的，也就是说在函数返回时有可能文档还没有加入索引中，因此
-//         如果立刻调用Search可能无法查询到这个文档。强制刷新索引请调用FlushIndex函数。
+//  1. 这个函数是线程安全的，请尽可能并发调用以提高索引速度
+//  2. 这个函数调用是非同步的，也就是说在函数返回时有可能文档还没有加入索引中，因此
+//     如果立刻调用Search可能无法查询到这个文档。强制刷新索引请调用FlushIndex函数。
 func (engine *Engine) IndexDoc(docId string, data types.DocData,
 	forceUpdate ...bool) {
 	engine.Index(docId, data, forceUpdate...)
@@ -419,13 +419,14 @@ func (engine *Engine) internalIndexDoc(docId string, data types.DocData,
 // 将文档从索引中删除
 //
 // 输入参数：
-//  docId	      标识文档编号，必须唯一，docId == 0 表示非法文档（用于强制刷新索引），[1, +oo) 表示合法文档
-//  forceUpdate 是否强制刷新 cache，如果设为 true，则尽快删除索引，否则等待 cache 满之后一次全量删除
+//
+//	docId	      标识文档编号，必须唯一，docId == 0 表示非法文档（用于强制刷新索引），[1, +oo) 表示合法文档
+//	forceUpdate 是否强制刷新 cache，如果设为 true，则尽快删除索引，否则等待 cache 满之后一次全量删除
 //
 // 注意：
-//      1. 这个函数是线程安全的，请尽可能并发调用以提高索引速度
-//      2. 这个函数调用是非同步的，也就是说在函数返回时有可能文档还没有加入索引中，因此
-//         如果立刻调用 Search 可能无法查询到这个文档。强制刷新索引请调用 FlushIndex 函数。
+//  1. 这个函数是线程安全的，请尽可能并发调用以提高索引速度
+//  2. 这个函数调用是非同步的，也就是说在函数返回时有可能文档还没有加入索引中，因此
+//     如果立刻调用 Search 可能无法查询到这个文档。强制刷新索引请调用 FlushIndex 函数。
 func (engine *Engine) RemoveDoc(docId string, forceUpdate ...bool) {
 	var force bool
 	if len(forceUpdate) > 0 {

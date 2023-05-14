@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-ego/riot/types"
 	"github.com/vcaesar/tt"
+	"github.com/xiechuxi/riot/types"
 )
 
 type DummyScoringFields struct {

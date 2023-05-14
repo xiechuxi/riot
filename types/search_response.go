@@ -16,7 +16,7 @@
 package types
 
 import (
-	"github.com/go-ego/riot/utils"
+	"github.com/xiechuxi/riot/utils"
 )
 
 // BaseResp search response options
